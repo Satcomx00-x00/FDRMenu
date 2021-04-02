@@ -3,3 +3,4 @@ __pycache__/
 .gitignore
 *.pyc
 *.dist-info
+*.dist-info
