@@ -3,4 +3,4 @@ __pycache__/
 .gitignore
 colorama-0.4.4.dist-info
 simple_term_menu-1.0.0.dist-info
-
+*.pyc
