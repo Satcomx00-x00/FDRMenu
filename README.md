@@ -1,13 +1,13 @@
 # FDRMenu
 
 
-1. FDReserve OS for French-digital-rising [https://www.fdreserve.com/](https://www.fdreserve.com/)
+1. FDReserve OS for [French-digital-rising](https://www.fdreserve.com/)
 2. Clone the repo
    ```sh
    git clone https://github.com/Satcomx00-x00/FDRMenu.git
    ```
    
-3. Install NPM packages
+3. Install Python3 packages
    ```sh
    pip3 install -r requirements.txt
    ```
