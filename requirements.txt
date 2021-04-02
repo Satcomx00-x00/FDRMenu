@@ -1,2 +1,2 @@
 simple-term-menu
-colorama
+pycoingecko
