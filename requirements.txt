@@ -1,2 +1,6 @@
-simple-term-menu
+simple_term_menu
+colorama
+signals
 pycoingecko
+terminaltables
+colorclass
