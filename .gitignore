@@ -1,4 +1,3 @@
-upload.sh
 __pycache__/
 .gitignore
 *.pyc
