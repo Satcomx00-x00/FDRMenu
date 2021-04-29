@@ -305,7 +305,7 @@ def main():
                     terminal_menu_test = TerminalMenu(listing, preview_command="batcat --color=always {}", preview_size=0.75)
                     menu_entry_index = terminal_menu_test.show()
                     editconfig_menu_back = True
-                elif fdrmenu_update_sel == 1:
+                elif linux_sel == 1:
                     editconfig_menu_back = True
                 editconfig_menu_back = False
 
