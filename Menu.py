@@ -387,7 +387,7 @@ def main():
             linux_menu_back = False
 
         elif main_sel == 7:
-            os.clear("clear")
+            os.system("clear")
             print("""
                                        88880000GGGGGGGG000888                                       
                                  8800GCCLLffffttttttt11111tttfLCG08                                 
