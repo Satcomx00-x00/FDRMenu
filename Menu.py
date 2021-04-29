@@ -298,6 +298,7 @@ def main():
             while not editconfig_menu_back:
                 linux_sel = editconfig_menu.show()
                 if linux_sel == 0:
+                    # while not editconfig_menu_back:
                     user = str(getpass.getuser())
                     listing=[]
                     listing.append(f"/home/{user}/.fdreserve/masternode.conf")
@@ -307,8 +308,9 @@ def main():
                     terminal_menu_test_back = True
                     editconfig_menu_back = True
                 elif linux_sel == 1:
+                    linux_sel = 1
                     editconfig_menu_back = True
-                editconfig_menu_back = False
+            editconfig_menu_back = False
 
         elif main_sel == 4:
             while not browser_menu_back:
