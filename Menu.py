@@ -25,51 +25,7 @@ __author__ = "FDR - Satcom"
 __version__ = '0.1.0'
 os.system('clear')
 
-# template = """
-#  ______ _____  _____
-# |  ____|  __ \|  __ \
-# | |__  | |  | | |__) |___  ___  ___ _ ____   _____
-# |  __| | |  | |  _  // _ \/ __|/ _ \ '__\ \ / / _ \\
-# | |    | |__| | | \ \  __/\__ \  __/ |   \ V /  __/
-# |_|    |_____/|_|  \_\___||___/\___|_|    \_/ \___|\n"""
 
-# {
-#     "name": "French Digital Reserve",
-#     "tickers": [
-#         {
-#             "base": "FDR",
-#             "target": "BTC",
-#             "market": {
-#                 "name": "CREX24",
-#                 "identifier": "crex24",
-#                 "has_trading_incentive": false
-#             },
-#             "last": 7.41e-06,
-#             "volume": 9859.60098021,
-#             "converted_last": {
-#                 "btc": 7.41e-06,
-#                 "eth": 0.00022167,
-#                 "usd": 0.441516
-#             },
-#             "converted_volume": {
-#                 "btc": 0.07305964,
-#                 "eth": 2.185594,
-#                 "usd": 4353.17
-#             },
-#             "trust_score": "yellow",
-#             "bid_ask_spread_percentage": 7.577808,
-#             "timestamp": "2021-04-02T10:15:54+00:00",
-#             "last_traded_at": "2021-04-02T10:15:54+00:00",
-#             "last_fetch_at": "2021-04-02T11:05:49+00:00",
-#             "is_anomaly": false,
-#             "is_stale": false,
-#             "trade_url": "https://crex24.com/exchange/FDR-BTC",
-#             "token_info_url": null,
-#             "coin_id": "french-digital-reserve",
-#             "target_coin_id": "bitcoin"
-#         }
-#     ]
-# }
 global fdr_dict, impulse_dict, template
 
 
@@ -124,7 +80,7 @@ def coins_values():
 |  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
 |_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
                                                 '.____'.____.'____.'
-                                                '.________________.'\n\n""" + table_instance.table)
+                                                '.________________.'  by FDR\n\n""" + table_instance.table)
         return temp
     except:
         return str("""
@@ -140,28 +96,10 @@ def coins_values():
 |  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
 |_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
                                                 '.____'.____.'____.'
-                                                '.________________.'\n\n
+                                                '.________________.'  by FDR\n\n
     No Connection !
     """)
-    # return (table_instance.table)
 
-    # return str(f"""s
-    #  ______ _____  _____
-    # |  ____|  __ \|  __ \
-    # | |__  | |  | | |__) |___  ___  ___ _ ____   _____
-    # |  __| | |  | |  _  // _ \/ __|/ _ \ '__\ \ / / _ \\
-    # | |    | |__| | | \ \  __/\__ \  __/ |   \ V /  __/
-    # |_|    |_____/|_|  \_\___||___/\___|_|    \_/ \___|\n
-
-    # ----------------- FDR -----------------
-    # 24H Total Volume is {fdr_dict["fdr_vol"]} FDR
-    #     {fdr_dict["usd_price"]} $     With {fdr_dict["usd_vol"]} $ Volume
-    #     {fdr_dict["btc_price"]} BTC   With {fdr_dict["btc_vol"]} BTC Volume
-
-    # --------------- IMPULSE ---------------
-    # 24H Total Volume is {impulse_dict["impulse_vol"]} IMPULSE
-    #     {impulse_dict["usd_price"]} $     With {impulse_dict["usd_vol"]} $ Volume
-    #     {impulse_dict["btc_price"]} BTC   With {impulse_dict["btc_vol"]} BTC Volume """+table_instance.table)
 
 
 def main():
@@ -269,11 +207,24 @@ def main():
 
     linux_menu_title = " \n FDR - Linux Command Menu\n"
     linux_menu_items = ["Upgrade Packets",
-                        "Repair Network", "Reboot", "Change Password", "Back"]
+                        "Repair Network", "Reboot", "Change Password", "Enable SSH", "Disable SSH","Back"]
     linux_menu_back = False
     linux_menu = TerminalMenu(
         linux_menu_items,
         title=linux_menu_title,
+        menu_cursor=main_menu_cursor,
+        menu_cursor_style=main_menu_cursor_style,
+        menu_highlight_style=main_menu_style,
+        cycle_cursor=True,
+        clear_screen=False,
+    )
+
+    fileedit_menu_title = " \n FDR - File Edit Menu\n"
+    fileedit_menu_items = ["Edit masternode.conf", "Edit fdreserve.conf", "Edit  Notepad", "Back"]
+    fileedit_menu_back = False
+    fileedit_menu = TerminalMenu(
+        fileedit_menu_items,
+        title=fileedit_menu_title,
         menu_cursor=main_menu_cursor,
         menu_cursor_style=main_menu_cursor_style,
         menu_highlight_style=main_menu_style,
@@ -344,20 +295,18 @@ def main():
             fdrmenu_update_menu_back = False
 
         elif main_sel == 3:
-            while not fdrmenu_update_menu_back:
-                fdrmenu_update_sel = fdrmenu_update_menu.show()
-                if fdrmenu_update_sel == 0:
-                    print("Updating Menu...")
-                    try:
-                        os.system("git merge main")
-                        time.sleep(2)
-                    except:
-                        print("Error on update.")
-                        time.sleep(5)
-                    fdrmenu_update_menu_back = True
+            while not editconfig_menu_back:
+                linux_sel = editconfig_menu.show()
+                if linux_sel == 0:
+                    user = str(getpass.getuser())
+                    listing=[]
+                    listing.append(f"/home/{user}/.fdreserve/masternode.conf")
+                    listing.append(f"/home/{user}/.fdreserve/fdreserve.conf")
+                    terminal_menu_test = TerminalMenu(listing, preview_command="batcat --color=always {}", preview_size=0.75)
+                    menu_entry_index = terminal_menu_test.show()
                 elif fdrmenu_update_sel == 1:
-                    fdrmenu_update_menu_back = True
-            fdrmenu_update_menu_back = False
+                    editconfig_menu_back = True
+                editconfig_menu_back = False
 
         elif main_sel == 4:
             while not browser_menu_back:
@@ -376,24 +325,28 @@ def main():
                     except:
                         print("Error")
                     browser_menu_back = True
+                elif fdrmenu_update_sel == 2:
+                    browser_menu_back = True
             browser_menu_back = False
 
         elif main_sel == 5:
-            while not editconfig_menu_back:
-                linux_sel = editconfig_menu.show()
-                if linux_sel == 0:
-
+            while not fileedit_menu_back:
+                fileedit_sel = fileedit_menu.show()
+                if fileedit_sel == 0:
                     user = str(getpass.getuser())
-                    listing=[]
-                    listing.append(f"/home/{user}/.fdreserve/masternode.conf")
-                    listing.append(f"/home/{user}/.fdreserve/fdreserve.conf")
-                    terminal_menu_test = TerminalMenu(listing, preview_command="batcat --color=always {}", preview_size=0.75)
-                    menu_entry_index = terminal_menu_test.show()
-
-                    editconfig_menu_back = True
-                elif linux_sel == 1:
-                    editconfig_menu_back = True
-            editconfig_menu_back = False
+                    os.system(f"nano /home/{user}/.fdreserve/masternode.conf")
+                    fileedit_menu_back = False
+                elif fileedit_sel == 1:
+                    user = str(getpass.getuser())
+                    os.system(f"nano /home/{user}/.fdreserve/fdreserve.conf")
+                    fileedit_menu_back = False
+                elif fileedit_sel == 2:
+                    os.system(f"nano /home/{user}/notepad.txt")
+                    fileedit_menu_back = True
+                elif fileedit_sel == 3:
+                    fileedit_menu_back = True
+            fileedit_menu_back = False
+            
 
         elif main_sel == 6:
             while not linux_menu_back:
@@ -414,6 +367,22 @@ def main():
                     os.system("sudo passwd fdr")
                     linux_menu_back = True
                 elif linux_sel == 4:
+                    print("Turn on SSH, remember that using ssh create attack vectors ! \n SSH ports are 22 on IPV4/IPV6")
+                    time.sleep(2)
+                    ans = input("ARE YOU SURE ? (YES/NO)")
+                    if ans == "YES":
+                        os.system("sudo ufw allow ssh && sudo ufw reload && sudo systemctl start ssh")
+                    else:
+                        linux_menu_back = True
+                    linux_menu_back = True
+                elif linux_sel == 5:
+                    try :
+                        os.system("sudo systemctl stop ssh && sudo ufw delete allow ssh && sudo ufw reload")
+                        print("SSH disabled and firewall ports closed")
+                    except:
+                        print("An error occurred")
+                    linux_menu_back = True
+                elif linux_sel == 6:
                     linux_menu_back = True
             linux_menu_back = False
 
