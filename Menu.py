@@ -387,6 +387,57 @@ def main():
             linux_menu_back = False
 
         elif main_sel == 7:
+            os.clear("clear")
+            print("""
+                                       88880000GGGGGGGG000888                                       
+                                 8800GCCLLffffttttttt11111tttfLCG08                                 
+                             880GCCLLLLLfffffffftttttt1111111iiii1tfLG88                            
+                         880GGCCCCCLLLLLLLLfffffffttttttt1111111iiiiii1tLG8                         
+                      880GGCCCCCCCCCCLLLLLLLLfffffffttttttt1111111iiiiiiii1fG8                      
+                    80GGGGGGGGCCCCCCCCCLLLLLLLfffffffttttttt1111111iiiiiiiiii1L08                   
+                  80GGGGGGGGGG0000000000000000000GGGGGGGGGGGGGGGCCCCCCCCCtiiiiiifG8                 
+                8GGCGGGGGGGGGG                                           Liiiiii;itG8               
+              8GCCCCCGGGGGGGG0                                           LiiiiiiiiiitG              
+            8GCCCCCCCCCGGGGGG0                                           L11iiiiiiiiiif0            
+           0CLLCCCCCCCCCCGGGGG                                           C1111iiiiiiiii1G           
+         8GLLLLLCCCCCCCCCCCGGG          0000000000000GGGGGGGGGGGGGGCCCCCCf111111iiiiiiiiiL8         
+        8CLLLLLLLLLCCCCCCCCCCG          GGGCCCCCCCCCCLLLLLLLffffffftttttttt1111111iiiiiiiif8        
+       8CfffLLLLLLLLLCCCCCCCCG          GGGGGGCCCCCCCCCLLLLLLLLfffffffttttttt1111111iiiiiiif8       
+      8CffffffLLLLLLLLLCCCCCCG          GGGGGGGGCCCCCCCCCLLLLLLLLfffffffttttttt1111111iiiiiif8      
+      CtffffffffLLLLLLCCCCCCCG          GGGGGGGGGGGGCCCCCCCLLLLLLLLfffffffttttttt1111111iiiiiL      
+     GttttffffffffLL0888888888          8888888888888888GCCCCLLLLLLLLfffffffttttttt1111111iiiiG     
+    8fttttttfffffffL8                                   0CCCCCCLLLLLLLLfffffffttttttt1111111iit8    
+    C1ttttttttfffffL8                                   0CCCCCCCCLLLLLLLLfffffffttttttt1111111iL    
+   8t111ttttttttffffG000000000          8008888888888888GCCCCCCCCCCLLLLLLLLfffffffttttttt111111t8   
+   G111111ttttttttffffffffLLLC         8GCCCCCGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLfffffffttttttt11111G   
+   C11111111ttttttttfffffffffC         8CCCCCCCCGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLfffffffttttttt111C   
+   fii11111111ttttttffffffLLLC         8GCCCCCGGGGGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLfffffffttttttt1L   
+   fiiii11111111tttf0888888888          88888888888888880GGGGGGGGGCCCCCCCCCLLLLLLLLfffffffttttttL   
+   fiiiiii11111111tf8                                   0GGGGGGGGGGGCCCCCCCCCLLLLLLLLfffffffttttL   
+   fiiiiiiii1111111t8                                   0GGGGGGGGGGGGGCCCCCCCCCLLLLLLLLfffffffttC   
+   Liiiiiiiiii11111tCGGGGGGGG0          0000000000000000GCGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLfffffftG   
+   Gi;iiiiiiiiii11111111tttttL         8LLLLLLLLLCCCCCCCCCCCGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLfffff0   
+   81;;iiiiiiiiiii11111111tttL         8LfLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLffL8   
+    L;;;;iiiiiiiiiii111111111f8        8LfffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCCCCCCCLLLLLLLLG    
+    01;;;;;;iiiiiiiiii1111111f8        8LfffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCCCCCCCLLLLLC8    
+     C;;;;;;;;iiiiiiiiii11111f8        8LfffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCCCCCCCLLL0     
+      f;;;;;;;;;iiiiiiiiii111f8        8ftffffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCCCCCCCG      
+      8t;;;;;;;;;iiiiiiiiiiiif8        8ftttffffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCCCCG8      
+       8t;;;;;;;;;;;iiiiiiiiit8        8ftttttffffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGGCCCG8       
+        8f;;;;;;;;;;;;iiiiiiit8        8ftttttttffffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGGGGG08        
+         8L;;;;;;;;;;;;;iiiiit8        8t1ttttttttffffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGGGGG0          
+           C1;;;;;;;;;;;;iiiit8        8t111ttttttttffffffffLLLLLLLLLCCCCCCCCCCGGGGGGGGG8           
+            0fi;;;;;;;;;;;;;;t8        8t11111ttttttttffffffffLLLLLLLLLCCCCCCCCCCGGGGG08            
+              Gt;;;;;;;;;;;;;t8        8t1111111ttttttttffffffffLLLLLLLLLCCCCCCCCCCGG8              
+               8Gt;;;;;;;;;;;t         8ti11111111ttttttttffffffffLLLLLLLLLCCCCCCCG8                
+                 8Gti;;;;;;;;iLCCCCCCCCL1iii11111111ttttttttffffffffLLLLLLLLLCCCG8                  
+                   80L1;;;;;;;;;;;;;;iiiiiiiii11111111ttttttttffffffffLLLLLLLCG8                    
+                      8Gf1;;;;;;;;;;;;iiiiiiiiii11111111ttttttttffffffffLLCG08                      
+                         8GLti;;;;;;;;;iiiiiiiiiii11111111ttttttttffffLCG08                         
+                            80GLt1i;;;;;;;iiiiiiiiii111111111ttttfLCG08                             
+                                 80GCftt1iiiiiiiiiiii1111ttffLCG088                                 
+                                       88800GGGGCCCGGGG000888                                       
+            """)
             exit(0)
             main_menu_exit = True
 
