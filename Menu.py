@@ -375,7 +375,7 @@ def main():
                     time.sleep(2)
                     ans = input("ARE YOU SURE ? (YES/NO)")
                     if ans == "YES":
-                        os.system("sudo ufw allow ssh && sudo ufw reload && sudo systemctl start ssh")
+                        os.system("sudo ufw allow ssh && sudo ufw enable && sudo ufw reload && sudo systemctl start ssh")
                     else:
                         linux_menu_back = True
                     linux_menu_back = True
