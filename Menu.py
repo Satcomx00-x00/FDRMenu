@@ -22,7 +22,7 @@ except Exception as err:
     exit
 
 __author__ = "FDR - Satcom"
-__version__ = '0.8.0'
+__version__ = '0.9.0'
 os.system('clear')
 
 
@@ -80,7 +80,7 @@ def coins_values():
 |  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
 |_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
                                                 '.____'.____.'____.'
-                                                '.________________.'  by FDR -- V0.8.0\n\n""" + table_instance.table)
+                                                '.________________.'  by FDR -- V0.9.0\n\n""" + table_instance.table)
         return temp
     except:
         return str("""
@@ -96,7 +96,7 @@ def coins_values():
 |  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
 |_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
                                                 '.____'.____.'____.'
-                                                '.________________.'  by FDR -- V0.8.0\n\n
+                                                '.________________.'  by FDR -- V0.9.0\n\n
     No Connection !
     """)
 
@@ -124,8 +124,9 @@ def main():
         cycle_cursor=True,
         clear_screen=False,
     )
+
     wallet_menu_title = " \n FDR - Wallet Menu\n"
-    wallet_menu_items = ["Update Wallet", "Back"]
+    wallet_menu_items = ["Open Wallet","Update Wallet", "Back"]
     wallet_menu_back = False
     wallet_menu = TerminalMenu(
         wallet_menu_items,
@@ -238,6 +239,10 @@ def main():
             while not wallet_menu_back:
                 wall_sel = wallet_menu.show()
                 if wall_sel == 0:
+                    print("Starting  wallet ...")
+                    user = str(getpass.getuser())
+                    os.system(f"startx /home/{user}/FDRWallet/fdreserve-qt")
+                if wall_sel == 1:
                     while not update_menu_back:
                         print(
                             "Wallet Update \n Remember to save your wallet.dat ! we don't know what could happen... \n Are you sure ?")
@@ -247,7 +252,7 @@ def main():
                         elif edit_sel == 1:
                             update_menu_back = True
                     update_menu_back = True
-                elif wall_sel == 1:
+                elif wall_sel == 2:
                     wallet_menu_back = True
             wallet_menu_back = False
 
