@@ -108,7 +108,7 @@ def main():
     template = coins_values()
     print(template)
     main_menu_title = " \n FDR - Main Menu\n"
-    main_menu_items = ["Wallet Update", "Snapshot Update", "FDRMenu Update",
+    main_menu_items = ["Wallet", "Snapshot Update", "FDRMenu Update",
                        "Wallet config preview", "Browser", "Edit Config", "Linux Things", "Restart Menu"]
     main_menu_cursor = "FDR > "
     main_menu_cursor_style = ("fg_yellow", "bold")
