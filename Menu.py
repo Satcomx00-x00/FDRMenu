@@ -22,7 +22,7 @@ except Exception as err:
     exit
 
 __author__ = "FDR - Satcom"
-__version__ = '0.1.0'
+__version__ = '0.8.0'
 os.system('clear')
 
 
@@ -80,7 +80,7 @@ def coins_values():
 |  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
 |_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
                                                 '.____'.____.'____.'
-                                                '.________________.'  by FDR\n\n""" + table_instance.table)
+                                                '.________________.'  by FDR -- V0.8.0\n\n""" + table_instance.table)
         return temp
     except:
         return str("""
@@ -96,7 +96,7 @@ def coins_values():
 |  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
 |_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
                                                 '.____'.____.'____.'
-                                                '.________________.'  by FDR\n\n
+                                                '.________________.'  by FDR -- V0.8.0\n\n
     No Connection !
     """)
 
