@@ -20,6 +20,7 @@ try:
 except Exception as err:
     print(err)
     exit
+import socket
 
 __author__ = "FDR - Satcom"
 __version__ = '0.9.0'
@@ -31,7 +32,6 @@ global fdr_dict, impulse_dict, template
 
 def coins_values():
     try:
-
         fdr_data = cg.get_coin_ticker_by_id('french-digital-reserve')
         # fdr_data=json.dumps(fdr_data, indent=4)
         fdr_dict = {
@@ -68,35 +68,25 @@ def coins_values():
         table_instance = SingleTable(table_data)
         table_instance.inner_heading_row_border = False
         temp = str("""
-                                                     .--------.
-                                                    / .------. \\
-                                                   / /        \ \\
-                                                   | |        | |
-                                                  _| |________| |_
-                                                .' |_|        |_| '.
- _____ ____  ____   __     __          _ _      '._____ ____ _____.'
-|  ___|  _ \|  _ \  \ \   / /_ _ _   _| | |_    |     .'____'.     |
-| |_  | | | | |_) |  \ \ / / _` | | | | | __|   '.__.'.'    '.'.__.'
-|  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
-|_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
-                                                '.____'.____.'____.'
-                                                '.________________.'  by FDR -- V0.9.0\n\n""" + table_instance.table)
+
+   _____ _        _            _                     ____   _____ 
+  / ____| |      | |          | |                   / __ \ / ____|
+ | (___ | |_ __ _| | _____  __| | ___   ___  _ __  | |  | | (___  
+  \___ \| __/ _` | |/ / _ \/ _` |/ _ \ / _ \| '__| | |  | |\___ \ 
+  ____) | || (_| |   <  __/ (_| | (_) | (_) | |    | |__| |____) |
+ |_____/ \__\__,_|_|\_\___|\__,_|\___/ \___/|_|     \____/|_____/ 
+                                                                     by FDR -- V0.9.0\n\n""" + table_instance.table)
         return temp
     except:
         return str("""
-                                                     .--------.
-                                                    / .------. \\
-                                                   / /        \ \\
-                                                   | |        | |
-                                                  _| |________| |_
-                                                .' |_|        |_| '.
- _____ ____  ____   __     __          _ _      '._____ ____ _____.'
-|  ___|  _ \|  _ \  \ \   / /_ _ _   _| | |_    |     .'____'.     |
-| |_  | | | | |_) |  \ \ / / _` | | | | | __|   '.__.'.'    '.'.__.'
-|  _| | |_| |  _ <    \ V / (_| | |_| | | |_    '.__  | VAULT | __.'
-|_|   |____/|_| \_\    \_/ \__,_|\__,_|_|\__|   |   '.'.____.'.'   |
-                                                '.____'.____.'____.'
-                                                '.________________.'  by FDR -- V0.9.0\n\n
+
+   _____ _        _            _                     ____   _____ 
+  / ____| |      | |          | |                   / __ \ / ____|
+ | (___ | |_ __ _| | _____  __| | ___   ___  _ __  | |  | | (___  
+  \___ \| __/ _` | |/ / _ \/ _` |/ _ \ / _ \| '__| | |  | |\___ \ 
+  ____) | || (_| |   <  __/ (_| | (_) | (_) | |    | |__| |____) |
+ |_____/ \__\__,_|_|\_\___|\__,_|\___/ \___/|_|     \____/|_____/ 
+                                                                     by FDR -- V0.9.0\n\n
     No Connection !
     """)
 
@@ -208,7 +198,7 @@ def main():
 
     linux_menu_title = " \n FDR - Linux Command Menu\n"
     linux_menu_items = ["Upgrade Packets",
-                        "Repair Network", "Reboot", "Change Password", "Enable SSH", "Disable SSH","Back"]
+                        "Repair Network", "Reboot", "Change Password", "Enable SSH", "Disable SSH", "Local IP","Back"]
     linux_menu_back = False
     linux_menu = TerminalMenu(
         linux_menu_items,
@@ -392,6 +382,16 @@ def main():
                         print("An error occurred")
                     linux_menu_back = True
                 elif linux_sel == 6:
+                    try:
+                        hostname = socket.gethostname()
+                        local_ip = socket.gethostbyname(hostname)
+                        print(local_ip)
+                        time.sleep(5)
+                        linux_menu_back = True
+                    except :
+                        print("An error occurred")
+                        linux_menu_back = True
+                elif linux_sel == 7:
                     linux_menu_back = True
             linux_menu_back = False
 
