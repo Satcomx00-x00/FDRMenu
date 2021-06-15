@@ -81,6 +81,7 @@ print(
 """
 )
 time.sleep(2)
+os.system("clear")
 global fdr_dict, impulse_dict, template
 
 
@@ -371,7 +372,7 @@ def main():
                 if fdrmenu_update_sel == 0:
                     print("Updating Menu...")
                     try:
-                        os.system("cd /usr/share/fdr/FDRMenu && git clone -q https://github.com/Satcomx00-x00/FDRMenu.git")
+                        os.system("cd /usr/share/fdr/FDRMenu && sudo git clone -q https://github.com/Satcomx00-x00/FDRMenu.git")
                         time.sleep(2)
                     except:
                         print("Error on update.")
