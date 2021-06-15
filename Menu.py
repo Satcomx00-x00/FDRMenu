@@ -371,7 +371,7 @@ def main():
                 if fdrmenu_update_sel == 0:
                     print("Updating Menu...")
                     try:
-                        os.system("cd /usr/share/fdr/FDRMenu && git reset --hard ")
+                        os.system("cd /usr/share/fdr/FDRMenu && git clone -q https://github.com/Satcomx00-x00/FDRMenu.git")
                         time.sleep(2)
                     except:
                         print("Error on update.")
