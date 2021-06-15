@@ -111,7 +111,7 @@ def coins_values():
         }
 
         table_data = [
-            ["Curreny", "FDR", "IMPULSE"],
+            ["Currency", "FDR", "IMPULSE"],
             [
                 Color("{autoyellow}Price USD{/autoyellow}"),
                 f'{fdr_dict["usd_price"]} $',
